@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #111;
+    padding-top: 150px;
+}
+
+.lightsaber {
+    position: relative;
+}
+
+.lightsaber label {
+    position: absolute;
+    width: 15px;
+    height: 50px;
+    background: #DDD;
+    border-bottom: solid 4px gray;
+    border-top: solig 4px gray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lightsaber input[type="radio"] {
+    opacity: 0;
+}
+
+.lightsaber input[type="radio"]:checked ~ .plasma {
+    height: 250px;
+}
+
+.lightsaber .plasma {
+    transition: height 0.3s;
+    position: absolute;
+    bottom: 17px;
+    width: 10px;
+    height: 0;
+    left: 3px;
+    filter: blur(1px);
+    border-radius: 12px 12px 0 0;
+}
+
+.lightsaber--yoda .plasma {
+    background: rgb(135, 220, 90);
+    background: linear-gradient(
+        to right,
+        rgb(135, 220, 90) 0%,
+        rgb(254, 254, 254) 30%,
+        rgb(254, 254, 254) 50%,
+        rgb(254, 254, 254) 70%,
+        rgb(135, 220, 90) 100%,
+    );
+}
+
+.lightsaber--vader .plasma {
+    background: rgb(229, 17, 21);
+    background: linear-gradient(
+        to right,
+        rgba(229, 17, 21, 1) 0%,
+        rgba(254, 254, 254, 1) 30%,
+        rgba(254, 254, 254, 1) 47%,
+        rgba(254, 254, 254, 1) 71%,
+        rgba(229, 17, 21, 1) 100%,
+    );
+}
+
+.lightsaber--windu .plasma {
+    background: rgb(202, 116, 221);
+    background: linear-gradient(
+        to right,
+        rgba(202, 116, 221, 1) 0%,
+        rgba(254, 254, 254, 1) 30%,
+        rgba(254, 254, 254, 1) 47%,
+        rgba(254, 254, 254, 1) 71%,
+        rgba(202, 116, 221, 1) 100%,
+    );
+}
